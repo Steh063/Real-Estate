@@ -1,4 +1,3 @@
-import { Button } from "./components/ui/button";
 import { Card, CardContent } from "./components/ui/card";
 import {
   Accordion,
@@ -6,12 +5,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "./components/ui/accordion";
-import { Badge } from "./components/ui/badge";
 import { ImageWithFallback } from "./components/figma/ImageWithFallback";
 import {
   TrendingUp,
   Users,
-  Handshake,
+  UserCheck,
   BarChart3,
   Settings,
   Rocket,
@@ -20,7 +18,6 @@ import {
   Trophy,
   GraduationCap,
   CheckCircle,
-  ArrowRight,
   Mail,
   Send,
   Linkedin,
@@ -28,7 +25,6 @@ import {
   User,
   Zap,
   DollarSign,
-  Clock,
   Percent,
 } from "lucide-react";
 
@@ -43,7 +39,7 @@ export default function App() {
       title: "Подбор, обучение и мотивация команды",
     },
     {
-      icon: Handshake,
+      icon: UserCheck,
       title: "Переговоры с топ-менеджерами и инвесторами",
     },
     {

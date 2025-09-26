@@ -5,7 +5,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "./components/ui/accordion-simple";
-// import { ImageWithFallback } from "./components/figma/ImageWithFallback";
 import {
   TrendingUp,
   Users,
@@ -72,24 +71,21 @@ export default function App() {
     {
       icon: Zap,
       value: "25%",
-      label:
-        "Сокращение расходов отдела с сохранением показателей",
+      label: "Сокращение расходов отдела с сохранением показателей",
     },
   ];
 
   const roadmapSteps = [
     {
       title: "Аудит и диагностика (0–3 недели)",
-      description:
-        "Цель: понять текущую ситуацию и точки роста.",
+      description: "Цель: понять текущую ситуацию и точки роста.",
       actions: [
         "Анализ текущей воронки (лиды → звонки → встречи → сделки)",
         "Проверка CRM (amoCRM/Bitrix24): корректность данных, воронка, аналитика",
         "Интервью с менеджерами → понимание их подхода и навыков",
         "Сбор обратной связи от клиентов (опросы/интервью): что ценят, что вызывает сомнения",
       ],
-      tools:
-        "CRM-отчёты, Customer Journey Map, интервью клиентов",
+      tools: "CRM-отчёты, Customer Journey Map, интервью клиентов",
       kpi: "выявлено 3–5 ключевых барьеров для роста продаж",
     },
     {
@@ -153,319 +149,502 @@ export default function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
+    <div style={{ 
+      minHeight: '100vh', 
+      background: 'linear-gradient(135deg, #f0fdfa 0%, #ffffff 50%, #f0fdf4 100%)',
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
+    }}>
       {/* Hero Section */}
-      <section className="relative px-6 py-6 md:py-10 overflow-hidden">
-        {/* Background overlay */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-emerald-100/50 via-teal-50/30 to-stone-100/40"></div>
-
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <h1 className="mb-6 text-3xl md:text-5xl font-bold bg-gradient-to-r from-stone-800 via-emerald-700 to-teal-700 bg-clip-text text-transparent leading-tight">
-            Руководитель отдела продаж, который доводит сделки
-            до закрытия
+      <section style={{ 
+        position: 'relative', 
+        padding: '60px 24px', 
+        textAlign: 'center',
+        background: 'linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%)'
+      }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <h1 className="responsive-text-large" style={{ 
+            fontSize: '3rem', 
+            fontWeight: '700', 
+            marginBottom: '24px',
+            background: 'linear-gradient(135deg, #374151, #059669, #0d9488)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            lineHeight: '1.2'
+          }}>
+            Руководитель отдела продаж, который доводит сделки до закрытия
           </h1>
-          <p className="mb-8 text-lg text-stone-700 max-w-5xl mx-auto leading-relaxed">
-            10+ лет управления в сложных продажах | Прирост
-            результатов до +50% | Формирование и развитие отдела
+          <p style={{ 
+            fontSize: '1.125rem', 
+            color: '#374151', 
+            marginBottom: '32px',
+            lineHeight: '1.6'
+          }}>
+            10+ лет управления в сложных продажах | Прирост результатов до +50% | Формирование и развитие отдела
           </p>
         </div>
-
-        {/* Decorative elements */}
-        <div className="absolute top-12 left-10 w-16 h-16 bg-gradient-to-br from-emerald-200 to-teal-200 rounded-full opacity-50 animate-pulse"></div>
-        <div className="absolute bottom-12 right-10 w-20 h-20 bg-gradient-to-br from-stone-200 to-slate-200 rounded-full opacity-50 animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 right-1/4 w-8 h-8 bg-gradient-to-br from-emerald-300 to-teal-300 rounded-full opacity-30 animate-pulse delay-500"></div>
       </section>
 
       {/* About Section */}
-      <section className="relative px-6 py-8 bg-white overflow-hidden">
-        {/* Background accent */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white/95 to-emerald-50/80"></div>
-
-        <div className="relative z-10 max-w-4xl mx-auto">
-          <Card className="border border-emerald-100 shadow-xl bg-gradient-to-r from-emerald-50/95 to-white/95 backdrop-blur-sm">
-            <CardContent className="p-6 md:p-8">
-              <div className="flex items-center mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-emerald-600 to-teal-600 rounded-full flex items-center justify-center mr-3">
-                  <User className="w-5 h-5 text-white" />
-                </div>
-                <h2 className="text-2xl font-bold text-stone-800">
-                  Обо мне
-                </h2>
+      <section style={{ 
+        padding: '60px 24px', 
+        background: '#ffffff'
+      }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{ 
+            background: 'linear-gradient(135deg, #f0fdfa, #ffffff)', 
+            border: '1px solid #a7f3d0',
+            borderRadius: '16px',
+            padding: '40px',
+            boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
+              <div style={{ 
+                width: '40px', 
+                height: '40px', 
+                background: 'linear-gradient(135deg, #059669, #0d9488)',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginRight: '16px'
+              }}>
+                <User size={20} color="white" />
               </div>
-              <p className="text-base text-stone-700 leading-relaxed">
-                Меня зовут Павел, я — руководитель продаж,
-                который умеет доводить сделки до результата.
-                Более 10 лет я строил команды, закрывал сложные
-                контракты и повышал продажи на 30–50%. В
-                недвижимости я сделаю то же самое для вашей
-                компании.
-              </p>
-            </CardContent>
-          </Card>
+              <h2 style={{ 
+                fontSize: '1.5rem', 
+                fontWeight: '700', 
+                color: '#1f2937',
+                margin: '0'
+              }}>
+                Обо мне
+              </h2>
+            </div>
+            <p style={{ 
+              fontSize: '1rem', 
+              color: '#374151', 
+              lineHeight: '1.6',
+              margin: '0'
+            }}>
+              Меня зовут Павел, я — руководитель продаж, который умеет доводить сделки до результата.
+              Более 10 лет я строил команды, закрывал сложные контракты и повышал продажи на 30–50%. 
+              В недвижимости я сделаю то же самое для вашей компании.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Competencies Section */}
-      <section className="relative px-6 py-12 overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white/95 to-emerald-50/80"></div>
-
-        <div className="relative z-10 max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-stone-800 mb-4">
+      <section style={{ 
+        padding: '60px 24px', 
+        background: 'linear-gradient(135deg, #f9fafb, #f0fdfa)'
+      }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <h2 style={{ 
+              fontSize: '2rem', 
+              fontWeight: '700', 
+              color: '#1f2937', 
+              marginBottom: '16px'
+            }}>
               Ключевые компетенции
             </h2>
-            <p className="text-stone-600">
+            <p style={{ fontSize: '1rem', color: '#6b7280' }}>
               Проверенные навыки для достижения результатов
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="responsive-grid" style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', 
+            gap: '24px'
+          }}>
             {competencies.map((competency, index) => (
-              <Card
-                key={index}
-                className="group hover:shadow-xl transition-all duration-300 border border-stone-100 shadow-lg hover:border-emerald-200"
-              >
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-emerald-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <competency.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <p className="text-stone-700 leading-relaxed">
-                        {competency.title}
-                      </p>
-                    </div>
+              <div key={index} style={{ 
+                background: '#ffffff',
+                border: '1px solid #e5e7eb',
+                borderRadius: '12px',
+                padding: '24px',
+                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
+                  <div style={{ 
+                    width: '48px', 
+                    height: '48px', 
+                    background: 'linear-gradient(135deg, #14b8a6, #059669)',
+                    borderRadius: '8px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}>
+                    <competency.icon size={24} color="white" />
                   </div>
-                </CardContent>
-              </Card>
+                  <p style={{ 
+                    color: '#374151', 
+                    lineHeight: '1.5',
+                    margin: '0',
+                    flex: '1'
+                  }}>
+                    {competency.title}
+                  </p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Why Me Section */}
-      <section className="relative px-6 py-12 bg-gradient-to-br from-stone-50 to-emerald-50 overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-stone-50/90 to-emerald-50/80"></div>
-
-        <div className="relative z-10 max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-stone-800 mb-4">
+      <section style={{ 
+        padding: '60px 24px', 
+        background: 'linear-gradient(135deg, #fafaf9, #f0fdfa)'
+      }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <h2 style={{ 
+              fontSize: '2rem', 
+              fontWeight: '700', 
+              color: '#1f2937', 
+              marginBottom: '16px'
+            }}>
               Почему именно я
             </h2>
-            <p className="text-stone-600">
+            <p style={{ fontSize: '1rem', color: '#6b7280' }}>
               Опыт, методологии и результаты
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="border border-stone-100 shadow-xl">
-              <CardContent className="p-8">
-                <div className="flex items-center mb-4">
-                  <Briefcase className="w-8 h-8 text-emerald-600 mr-3" />
-                  <h3 className="text-xl font-semibold text-stone-800">
-                    Опыт руководства
-                  </h3>
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(500px, 1fr))', 
+            gap: '32px'
+          }}>
+            <div style={{ 
+              background: '#ffffff',
+              border: '1px solid #e5e7eb',
+              borderRadius: '12px',
+              padding: '32px',
+              boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
+                <Briefcase size={32} color="#059669" style={{ marginRight: '12px' }} />
+                <h3 style={{ 
+                  fontSize: '1.25rem', 
+                  fontWeight: '600', 
+                  color: '#1f2937',
+                  margin: '0'
+                }}>
+                  Опыт руководства
+                </h3>
+              </div>
+              <p style={{ 
+                color: '#374151', 
+                marginBottom: '16px',
+                lineHeight: '1.5'
+              }}>
+                Руководил региональным офисом международной компании, сочетая продажи, управление и стратегию
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <Target size={16} color="#059669" style={{ marginRight: '8px' }} />
+                  <span style={{ fontSize: '0.875rem', color: '#6b7280' }}>
+                    Перевыполнение планов до +50%
+                  </span>
                 </div>
-                <p className="text-stone-700 mb-4">
-                  Руководил региональным офисом международной
-                  компании, сочетая продажи, управление и
-                  стратегию
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center">
-                    <Target className="w-4 h-4 text-emerald-600 mr-2" />
-                    <span className="text-sm text-stone-600">
-                      Перевыполнение планов до +50%
-                    </span>
-                  </div>
-                  <div className="flex items-center">
-                    <DollarSign className="w-4 h-4 text-emerald-600 mr-2" />
-                    <span className="text-sm text-stone-600">
-                      Опыт ведения крупных сделок и проектов
-                    </span>
-                  </div>
-                  <div className="flex items-center">
-                    <Trophy className="w-4 h-4 text-emerald-600 mr-2" />
-                    <span className="text-sm text-stone-600">
-                      Сильные лидерские качества, формирование
-                      команд
-                    </span>
-                  </div>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <DollarSign size={16} color="#059669" style={{ marginRight: '8px' }} />
+                  <span style={{ fontSize: '0.875rem', color: '#6b7280' }}>
+                    Опыт ведения крупных сделок и проектов
+                  </span>
                 </div>
-              </CardContent>
-            </Card>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <Trophy size={16} color="#059669" style={{ marginRight: '8px' }} />
+                  <span style={{ fontSize: '0.875rem', color: '#6b7280' }}>
+                    Сильные лидерские качества, формирование команд
+                  </span>
+                </div>
+              </div>
+            </div>
 
-            <Card className="border border-stone-100 shadow-xl">
-              <CardContent className="p-8">
-                <div className="flex items-center mb-4">
-                  <GraduationCap className="w-8 h-8 text-emerald-600 mr-3" />
-                  <h3 className="text-xl font-semibold text-stone-800">
-                    Методологии
-                  </h3>
-                </div>
-                <div className="space-y-4">
-                  <div className="p-3 bg-gradient-to-r from-teal-50 to-emerald-50 border border-teal-100 rounded-lg">
-                    <p className="font-medium text-stone-800">
-                      Strategic Selling® (Miller Heiman)
+            <div style={{ 
+              background: '#ffffff',
+              border: '1px solid #e5e7eb',
+              borderRadius: '12px',
+              padding: '32px',
+              boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
+                <GraduationCap size={32} color="#059669" style={{ marginRight: '12px' }} />
+                <h3 style={{ 
+                  fontSize: '1.25rem', 
+                  fontWeight: '600', 
+                  color: '#1f2937',
+                  margin: '0'
+                }}>
+                  Методологии
+                </h3>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                {[
+                  { title: "Strategic Selling® (Miller Heiman)", desc: "Управление сложными сделками и ключевыми клиентами" },
+                  { title: "Conceptual Selling® (Miller Heiman)", desc: "Точное понимание потребностей клиентов" },
+                  { title: "Franklin Covey: 7 Habits", desc: "Формирование командной культуры" },
+                  { title: "Лидерство по принципам Franklin Covey", desc: "Вовлечённость, дисциплина, результат" }
+                ].map((item, idx) => (
+                  <div key={idx} style={{ 
+                    padding: '12px', 
+                    background: 'linear-gradient(135deg, #f0fdfa, #ecfdf5)',
+                    border: '1px solid #a7f3d0',
+                    borderRadius: '8px'
+                  }}>
+                    <p style={{ 
+                      fontWeight: '500', 
+                      color: '#1f2937',
+                      margin: '0 0 4px 0'
+                    }}>
+                      {item.title}
                     </p>
-                    <p className="text-sm text-stone-600">
-                      Управление сложными сделками и ключевыми
-                      клиентами
+                    <p style={{ 
+                      fontSize: '0.875rem', 
+                      color: '#6b7280',
+                      margin: '0'
+                    }}>
+                      {item.desc}
                     </p>
                   </div>
-                  <div className="p-3 bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-100 rounded-lg">
-                    <p className="font-medium text-stone-800">
-                      Conceptual Selling® (Miller Heiman)
-                    </p>
-                    <p className="text-sm text-stone-600">
-                      Точное понимание потребностей клиентов
-                    </p>
-                  </div>
-                  <div className="p-3 bg-gradient-to-r from-stone-50 to-slate-50 border border-stone-100 rounded-lg">
-                    <p className="font-medium text-stone-800">
-                      Franklin Covey: 7 Habits
-                    </p>
-                    <p className="text-sm text-stone-600">
-                      Формирование командной культуры
-                    </p>
-                  </div>
-                  <div className="p-3 bg-gradient-to-r from-teal-50 to-emerald-50 border border-teal-100 rounded-lg">
-                    <p className="font-medium text-stone-800">
-                      Лидерство по принципам Franklin Covey
-                    </p>
-                    <p className="text-sm text-stone-600">
-                      Вовлечённость, дисциплина, результат
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Achievements Section */}
-      <section className="relative px-6 py-12 overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white/95 to-stone-50/85"></div>
-
-        <div className="relative z-10 max-w-6xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-stone-800 mb-4">
+      <section style={{ 
+        padding: '60px 24px', 
+        background: '#ffffff'
+      }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <h2 style={{ 
+              fontSize: '2rem', 
+              fontWeight: '700', 
+              color: '#1f2937', 
+              marginBottom: '16px'
+            }}>
               Результаты и достижения
             </h2>
-            <p className="text-stone-600">
+            <p style={{ fontSize: '1rem', color: '#6b7280' }}>
               Измеримые результаты моей работы
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
+            gap: '24px'
+          }}>
             {achievements.map((achievement, index) => (
-              <Card
-                key={index}
-                className="text-center border border-stone-100 shadow-xl hover:shadow-2xl hover:border-emerald-200 transition-all duration-300 group bg-white/90 backdrop-blur-sm"
-              >
-                <CardContent className="p-8">
-                  <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <achievement.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="text-3xl font-bold text-emerald-600 mb-2">
-                    {achievement.value}
-                  </div>
-                  <p className="text-stone-600 text-sm leading-relaxed">
-                    {achievement.label}
-                  </p>
-                </CardContent>
-              </Card>
+              <div key={index} style={{ 
+                textAlign: 'center',
+                background: '#ffffff',
+                border: '1px solid #e5e7eb',
+                borderRadius: '12px',
+                padding: '32px',
+                boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+                transition: 'all 0.3s ease'
+              }}>
+                <div style={{ 
+                  width: '64px', 
+                  height: '64px', 
+                  background: 'linear-gradient(135deg, #10b981, #14b8a6)',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 16px auto'
+                }}>
+                  <achievement.icon size={32} color="white" />
+                </div>
+                <div style={{ 
+                  fontSize: '2rem', 
+                  fontWeight: '700', 
+                  color: '#059669', 
+                  marginBottom: '8px'
+                }}>
+                  {achievement.value}
+                </div>
+                <p style={{ 
+                  color: '#6b7280', 
+                  fontSize: '0.875rem', 
+                  lineHeight: '1.4',
+                  margin: '0'
+                }}>
+                  {achievement.label}
+                </p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Roadmap Section */}
-      <section className="px-6 py-12 bg-gradient-to-br from-emerald-50 via-teal-50 to-stone-50">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-stone-800 mb-4">
+      <section style={{ 
+        padding: '60px 24px', 
+        background: 'linear-gradient(135deg, #f0fdfa, #ecfdf5, #fafaf9)'
+      }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+            <h2 style={{ 
+              fontSize: '2rem', 
+              fontWeight: '700', 
+              color: '#1f2937', 
+              marginBottom: '16px'
+            }}>
               План на первые 6 месяцев
             </h2>
-            <p className="text-stone-600">
+            <p style={{ fontSize: '1rem', color: '#6b7280' }}>
               Пошаговая дорожная карта достижения результатов
             </p>
           </div>
 
-          <Accordion
-            type="single"
-            collapsible
-            className="space-y-4"
-          >
+          <Accordion type="single" collapsible>
             {roadmapSteps.map((step, index) => (
-              <AccordionItem
-                key={index}
-                value={`step-${index}`}
-                className="border-0"
-              >
-                <Card className="shadow-lg border border-stone-200">
-                  <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                    <div className="flex items-center space-x-4 text-left">
-                      <div className="w-10 h-10 bg-gradient-to-br from-teal-600 to-emerald-600 rounded-full flex items-center justify-center text-white font-bold">
+              <AccordionItem key={index} value={`step-${index}`}>
+                <div style={{ 
+                  background: '#ffffff',
+                  border: '1px solid #d1d5db',
+                  borderRadius: '12px',
+                  boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
+                }}>
+                  <AccordionTrigger>
+                    <div style={{ 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      gap: '16px', 
+                      textAlign: 'left',
+                      padding: '24px',
+                      width: '100%'
+                    }}>
+                      <div style={{ 
+                        width: '40px', 
+                        height: '40px', 
+                        background: 'linear-gradient(135deg, #14b8a6, #059669)',
+                        borderRadius: '50%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: 'white',
+                        fontWeight: '700'
+                      }}>
                         {index + 1}
                       </div>
                       <div>
-                        <h3 className="font-semibold text-stone-800">
+                        <h3 style={{ 
+                          fontWeight: '600', 
+                          color: '#1f2937',
+                          margin: '0 0 4px 0'
+                        }}>
                           {step.title}
                         </h3>
-                        <p className="text-sm text-stone-600 mt-1">
+                        <p style={{ 
+                          fontSize: '0.875rem', 
+                          color: '#6b7280', 
+                          margin: '0'
+                        }}>
                           {step.description}
                         </p>
                       </div>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-6">
-                    <div className="space-y-4 mt-4">
-                      <div>
-                        <h4 className="font-medium text-stone-800 mb-2">
+                  <AccordionContent>
+                    <div style={{ 
+                      paddingTop: '16px',
+                      paddingLeft: '24px',
+                      paddingRight: '24px',
+                      paddingBottom: '24px'
+                    }}>
+                      <div style={{ marginBottom: '16px' }}>
+                        <h4 style={{ 
+                          fontWeight: '500', 
+                          color: '#1f2937', 
+                          marginBottom: '8px'
+                        }}>
                           Действия:
                         </h4>
-                        <ul className="space-y-1">
-                          {step.actions.map(
-                            (action, actionIndex) => (
-                              <li
-                                key={actionIndex}
-                                className="flex items-start"
-                              >
-                                <CheckCircle className="w-4 h-4 text-emerald-600 mr-2 mt-0.5 flex-shrink-0" />
-                                <span className="text-stone-600 text-sm">
-                                  {action}
-                                </span>
-                              </li>
-                            ),
-                          )}
+                        <ul style={{ listStyle: 'none', padding: '0', margin: '0' }}>
+                          {step.actions.map((action, actionIndex) => (
+                            <li key={actionIndex} style={{ 
+                              display: 'flex', 
+                              alignItems: 'flex-start',
+                              marginBottom: '4px'
+                            }}>
+                              <CheckCircle size={16} color="#059669" style={{ 
+                                marginRight: '8px', 
+                                marginTop: '2px',
+                                flexShrink: '0'
+                              }} />
+                              <span style={{ 
+                                color: '#6b7280', 
+                                fontSize: '0.875rem'
+                              }}>
+                                {action}
+                              </span>
+                            </li>
+                          ))}
                         </ul>
                       </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="p-3 bg-gradient-to-r from-teal-50 to-emerald-50 border border-teal-100 rounded-lg">
-                          <h4 className="font-medium text-stone-800 mb-1">
+                      <div style={{ 
+                        display: 'grid', 
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
+                        gap: '16px'
+                      }}>
+                        <div style={{ 
+                          padding: '12px', 
+                          background: 'linear-gradient(135deg, #f0fdfa, #ecfdf5)',
+                          border: '1px solid #a7f3d0',
+                          borderRadius: '8px'
+                        }}>
+                          <h4 style={{ 
+                            fontWeight: '500', 
+                            color: '#1f2937', 
+                            margin: '0 0 4px 0'
+                          }}>
                             Инструменты:
                           </h4>
-                          <p className="text-sm text-stone-600">
+                          <p style={{ 
+                            fontSize: '0.875rem', 
+                            color: '#6b7280',
+                            margin: '0'
+                          }}>
                             {step.tools}
                           </p>
                         </div>
-                        <div className="p-3 bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-100 rounded-lg">
-                          <h4 className="font-medium text-stone-800 mb-1">
+                        <div style={{ 
+                          padding: '12px', 
+                          background: 'linear-gradient(135deg, #ecfdf5, #f0fdf4)',
+                          border: '1px solid #bbf7d0',
+                          borderRadius: '8px'
+                        }}>
+                          <h4 style={{ 
+                            fontWeight: '500', 
+                            color: '#1f2937', 
+                            margin: '0 0 4px 0'
+                          }}>
                             KPI:
                           </h4>
-                          <p className="text-sm text-stone-600">
+                          <p style={{ 
+                            fontSize: '0.875rem', 
+                            color: '#6b7280',
+                            margin: '0'
+                          }}>
                             {step.kpi}
                           </p>
                         </div>
                       </div>
                     </div>
                   </AccordionContent>
-                </Card>
+                </div>
               </AccordionItem>
             ))}
           </Accordion>
@@ -473,55 +652,81 @@ export default function App() {
       </section>
 
       {/* Contact Section */}
-      <section className="relative px-6 py-6 bg-stone-800 overflow-hidden">
-        {/* Background overlay */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-br from-stone-800/95 to-emerald-900/90"></div>
-
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <h2 className="text-xl font-bold text-white mb-4">
+      <section style={{ 
+        padding: '48px 24px', 
+        background: 'linear-gradient(135deg, #1f2937, #065f46)',
+        color: 'white'
+      }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
+          <h2 style={{ 
+            fontSize: '1.5rem', 
+            fontWeight: '700', 
+            marginBottom: '32px'
+          }}>
             Контакты
           </h2>
 
-          <div className="flex flex-wrap justify-center gap-3">
-            <div className="flex items-center px-3 py-2 bg-stone-700/80 border border-emerald-400/20 rounded-lg">
-              <MapPin className="w-4 h-4 text-emerald-400 mr-2" />
-              <span className="text-white text-sm">
-                Батуми, Грузия
-              </span>
+          <div style={{ 
+            display: 'flex', 
+            flexWrap: 'wrap', 
+            justifyContent: 'center', 
+            gap: '12px'
+          }}>
+            <div style={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              padding: '8px 12px',
+              background: 'rgba(55, 65, 81, 0.8)',
+              border: '1px solid rgba(52, 211, 153, 0.2)',
+              borderRadius: '8px'
+            }}>
+              <MapPin size={16} color="#34d399" style={{ marginRight: '8px' }} />
+              <span style={{ fontSize: '0.875rem' }}>Батуми, Грузия</span>
             </div>
 
-            <a
-              href="mailto:steshin.p@icloud.com"
-              className="flex items-center px-3 py-2 bg-stone-700/80 border border-emerald-400/20 rounded-lg hover:bg-stone-600/80 hover:border-emerald-400/40 transition-colors duration-300"
-            >
-              <Mail className="w-4 h-4 text-emerald-400 mr-2" />
-              <span className="text-white text-sm">
-                steshin.p@icloud.com
-              </span>
+            <a href="mailto:steshin.p@icloud.com" style={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              padding: '8px 12px',
+              background: 'rgba(55, 65, 81, 0.8)',
+              border: '1px solid rgba(52, 211, 153, 0.2)',
+              borderRadius: '8px',
+              textDecoration: 'none',
+              color: 'white',
+              transition: 'all 0.3s ease'
+            }}>
+              <Mail size={16} color="#34d399" style={{ marginRight: '8px' }} />
+              <span style={{ fontSize: '0.875rem' }}>steshin.p@icloud.com</span>
             </a>
 
-            <a
-              href="https://t.me/steh063"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center px-3 py-2 bg-stone-700/80 border border-emerald-400/20 rounded-lg hover:bg-stone-600/80 hover:border-emerald-400/40 transition-colors duration-300"
-            >
-              <Send className="w-4 h-4 text-emerald-400 mr-2" />
-              <span className="text-white text-sm">
-                @steh063
-              </span>
+            <a href="https://t.me/steh063" target="_blank" rel="noopener noreferrer" style={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              padding: '8px 12px',
+              background: 'rgba(55, 65, 81, 0.8)',
+              border: '1px solid rgba(52, 211, 153, 0.2)',
+              borderRadius: '8px',
+              textDecoration: 'none',
+              color: 'white',
+              transition: 'all 0.3s ease'
+            }}>
+              <Send size={16} color="#34d399" style={{ marginRight: '8px' }} />
+              <span style={{ fontSize: '0.875rem' }}>@steh063</span>
             </a>
 
-            <a
-              href="https://www.linkedin.com/in/pavel-steshin063/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center px-3 py-2 bg-stone-700/80 border border-emerald-400/20 rounded-lg hover:bg-stone-600/80 hover:border-emerald-400/40 transition-colors duration-300"
-            >
-              <Linkedin className="w-4 h-4 text-emerald-400 mr-2" />
-              <span className="text-white text-sm">
-                pavelsteshin
-              </span>
+            <a href="https://www.linkedin.com/in/pavel-steshin063/" target="_blank" rel="noopener noreferrer" style={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              padding: '8px 12px',
+              background: 'rgba(55, 65, 81, 0.8)',
+              border: '1px solid rgba(52, 211, 153, 0.2)',
+              borderRadius: '8px',
+              textDecoration: 'none',
+              color: 'white',
+              transition: 'all 0.3s ease'
+            }}>
+              <Linkedin size={16} color="#34d399" style={{ marginRight: '8px' }} />
+              <span style={{ fontSize: '0.875rem' }}>pavelsteshin</span>
             </a>
           </div>
         </div>

@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { ChevronDown } from "lucide-react";
-import { cn } from "./utils";
 
 interface AccordionContextValue {
   openItems: Set<string>;
@@ -12,6 +11,7 @@ interface AccordionContextValue {
 }
 
 const AccordionContext = React.createContext<AccordionContextValue | null>(null);
+const AccordionItemContext = React.createContext<{ value: string } | null>(null);
 
 interface AccordionProps {
   type: "single" | "multiple";
@@ -58,9 +58,11 @@ interface AccordionItemProps {
 
 function AccordionItem({ value, className, children }: AccordionItemProps) {
   return (
-    <div className={cn("border-b last:border-b-0", className)} data-value={value}>
-      {children}
-    </div>
+    <AccordionItemContext.Provider value={{ value }}>
+      <div className={className} data-value={value}>
+        {children}
+      </div>
+    </AccordionItemContext.Provider>
   );
 }
 
@@ -82,18 +84,42 @@ function AccordionTrigger({ className, children }: AccordionTriggerProps) {
   const isOpen = openItems.has(value);
 
   return (
-    <div className="flex">
+    <div style={{ display: 'flex' }}>
       <button
-        className={cn(
-          "flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
-          "[&[data-state=open]>svg]:rotate-180",
-          className
-        )}
+        className={className}
         onClick={() => toggleItem(value)}
         data-state={isOpen ? "open" : "closed"}
+        style={{
+          display: 'flex',
+          flex: '1',
+          alignItems: 'flex-start',
+          justifyContent: 'space-between',
+          gap: '16px',
+          borderRadius: '6px',
+          paddingTop: '16px',
+          paddingBottom: '16px',
+          textAlign: 'left',
+          fontSize: '0.875rem',
+          fontWeight: '500',
+          transition: 'all 0.3s ease',
+          outline: 'none',
+          background: 'transparent',
+          border: 'none',
+          cursor: 'pointer'
+        }}
       >
         {children}
-        <ChevronDown className="text-muted-foreground pointer-events-none h-4 w-4 shrink-0 transition-transform duration-200" />
+        <ChevronDown 
+          size={16} 
+          style={{
+            color: '#6b7280',
+            pointerEvents: 'none',
+            flexShrink: '0',
+            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+            transition: 'transform 0.2s ease',
+            marginTop: '2px'
+          }} 
+        />
       </button>
     </div>
   );
@@ -103,22 +129,6 @@ interface AccordionContentProps {
   className?: string;
   children: React.ReactNode;
 }
-
-const AccordionItemContext = React.createContext<{ value: string } | null>(null);
-
-// Wrap AccordionItem to provide value context
-const AccordionItemWithContext = React.forwardRef<HTMLDivElement, AccordionItemProps>(
-  ({ value, className, children }, ref) => {
-    return (
-      <AccordionItemContext.Provider value={{ value }}>
-        <div ref={ref} className={cn("border-b last:border-b-0", className)} data-value={value}>
-          {children}
-        </div>
-      </AccordionItemContext.Provider>
-    );
-  }
-);
-AccordionItemWithContext.displayName = "AccordionItem";
 
 function AccordionContent({ className, children }: AccordionContentProps) {
   const context = React.useContext(AccordionContext);
@@ -136,15 +146,19 @@ function AccordionContent({ className, children }: AccordionContentProps) {
 
   return (
     <div
-      className={cn(
-        "overflow-hidden text-sm transition-all duration-300",
-        className
-      )}
+      className={className}
       data-state={isOpen ? "open" : "closed"}
+      style={{
+        overflow: 'hidden',
+        fontSize: '0.875rem',
+        transition: 'all 0.3s ease'
+      }}
     >
-      <div className="pt-0 pb-4">{children}</div>
+      <div style={{ paddingTop: '0', paddingBottom: '16px' }}>
+        {children}
+      </div>
     </div>
   );
 }
 
-export { Accordion, AccordionItemWithContext as AccordionItem, AccordionTrigger, AccordionContent };
+export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };

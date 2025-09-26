@@ -132,19 +132,17 @@ function AccordionContent({ className, children }: AccordionContentProps) {
   const { value } = parent;
   const isOpen = openItems.has(value);
 
+  if (!isOpen) return null;
+
   return (
     <div
       className={cn(
         "overflow-hidden text-sm transition-all duration-300",
-        isOpen ? "animate-accordion-down" : "animate-accordion-up"
+        className
       )}
       data-state={isOpen ? "open" : "closed"}
-      style={{
-        height: isOpen ? "auto" : 0,
-        opacity: isOpen ? 1 : 0,
-      }}
     >
-      <div className={cn("pt-0 pb-4", className)}>{children}</div>
+      <div className="pt-0 pb-4">{children}</div>
     </div>
   );
 }

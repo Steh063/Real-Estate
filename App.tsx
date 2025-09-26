@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "./components/ui/accordion-simple";
-import { ImageWithFallback } from "./components/figma/ImageWithFallback";
+// import { ImageWithFallback } from "./components/figma/ImageWithFallback";
 import {
   TrendingUp,
   Users,
@@ -156,43 +156,30 @@ export default function App() {
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50">
       {/* Hero Section */}
       <section className="relative px-6 py-6 md:py-10 overflow-hidden">
-        {/* Background image */}
-        <div className="absolute inset-0 z-0">
-          <ImageWithFallback
-            src="https://images.unsplash.com/photo-1588662033047-09ffbf31376c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYXR1bWklMjBnZW9yZ2lhJTIwc2Vhc2lkZSUyMHJlYWwlMjBlc3RhdGV8ZW58MXx8fHwxNzU4ODgwNDUwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            alt="Seaside real estate in Batumi"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-emerald-50/90 to-teal-50/85"></div>
-        </div>
+        {/* Background overlay */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-emerald-100/50 via-teal-50/30 to-stone-100/40"></div>
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <h1 className="mb-4 text-3xl md:text-5xl font-bold bg-gradient-to-r from-stone-800 via-emerald-700 to-teal-700 bg-clip-text text-transparent leading-tight">
+          <h1 className="mb-6 text-3xl md:text-5xl font-bold bg-gradient-to-r from-stone-800 via-emerald-700 to-teal-700 bg-clip-text text-transparent leading-tight">
             Руководитель отдела продаж, который доводит сделки
             до закрытия
           </h1>
-          <p className="mb-6 text-base text-stone-700 max-w-5xl mx-auto leading-relaxed whitespace-nowrap overflow-hidden text-ellipsis">
+          <p className="mb-8 text-lg text-stone-700 max-w-5xl mx-auto leading-relaxed">
             10+ лет управления в сложных продажах | Прирост
             результатов до +50% | Формирование и развитие отдела
           </p>
         </div>
 
         {/* Decorative elements */}
-        <div className="absolute top-12 left-10 w-14 h-14 bg-emerald-200 rounded-full opacity-40 animate-pulse"></div>
-        <div className="absolute bottom-12 right-10 w-20 h-20 bg-stone-200 rounded-full opacity-40 animate-pulse delay-1000"></div>
+        <div className="absolute top-12 left-10 w-16 h-16 bg-gradient-to-br from-emerald-200 to-teal-200 rounded-full opacity-50 animate-pulse"></div>
+        <div className="absolute bottom-12 right-10 w-20 h-20 bg-gradient-to-br from-stone-200 to-slate-200 rounded-full opacity-50 animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 right-1/4 w-8 h-8 bg-gradient-to-br from-emerald-300 to-teal-300 rounded-full opacity-30 animate-pulse delay-500"></div>
       </section>
 
       {/* About Section */}
       <section className="relative px-6 py-8 bg-white overflow-hidden">
         {/* Background accent */}
-        <div className="absolute inset-0 opacity-25">
-          <ImageWithFallback
-            src="https://images.unsplash.com/photo-1748794517492-d1f3aa3de852?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2FzdGFsJTIwbHV4dXJ5JTIwYXBhcnRtZW50JTIwYnVpbGRpbmd8ZW58MXx8fHwxNzU4ODgwNDUzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            alt="Coastal luxury apartments"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-white/70 to-emerald-50/70"></div>
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white/95 to-emerald-50/80"></div>
 
         <div className="relative z-10 max-w-4xl mx-auto">
           <Card className="border border-emerald-100 shadow-xl bg-gradient-to-r from-emerald-50/95 to-white/95 backdrop-blur-sm">
@@ -221,14 +208,7 @@ export default function App() {
       {/* Competencies Section */}
       <section className="relative px-6 py-12 overflow-hidden">
         {/* Background */}
-        <div className="absolute inset-0 opacity-20">
-          <ImageWithFallback
-            src="https://images.unsplash.com/photo-1683041133509-aab050b20b18?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2FzdGFsJTIwbW91bnRhaW4lMjBncmVlbiUyMGxhbmRzY2FwZXxlbnwxfHx8fDE3NTg4ODEwNTV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            alt="Coastal green landscape"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-emerald-50/80"></div>
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white/95 to-emerald-50/80"></div>
 
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="text-center mb-10">
@@ -267,14 +247,7 @@ export default function App() {
       {/* Why Me Section */}
       <section className="relative px-6 py-12 bg-gradient-to-br from-stone-50 to-emerald-50 overflow-hidden">
         {/* Background */}
-        <div className="absolute inset-0 opacity-18">
-          <ImageWithFallback
-            src="https://images.unsplash.com/photo-1758652389471-eb72fd914d45?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzZWFzaWRlJTIwcGViYmxlJTIwYmVhY2glMjByZXNvcnR8ZW58MXx8fHwxNzU4ODgwNDU2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            alt="Seaside resort with pebble beach"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-stone-50/70 to-emerald-50/70"></div>
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-stone-50/90 to-emerald-50/80"></div>
 
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="text-center mb-10">
@@ -376,14 +349,7 @@ export default function App() {
       {/* Achievements Section */}
       <section className="relative px-6 py-12 overflow-hidden">
         {/* Background */}
-        <div className="absolute inset-0 opacity-18">
-          <ImageWithFallback
-            src="https://images.unsplash.com/photo-1617633823770-fe49d9068cd2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwZWJibGUlMjBiZWFjaCUyMHN0b25lcyUyMHRleHR1cmV8ZW58MXx8fHwxNzU4ODgwOTkyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            alt="Pebble stones texture"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-white/85 to-stone-50/85"></div>
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white/95 to-stone-50/85"></div>
 
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="text-center mb-10">
@@ -509,14 +475,7 @@ export default function App() {
       {/* Contact Section */}
       <section className="relative px-6 py-6 bg-stone-800 overflow-hidden">
         {/* Background overlay */}
-        <div className="absolute inset-0 z-0">
-          <ImageWithFallback
-            src="https://images.unsplash.com/photo-1588662033047-09ffbf31376c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYXR1bWklMjBnZW9yZ2lhJTIwc2Vhc2lkZSUyMHJlYWwlMjBlc3RhdGV8ZW58MXx8fHwxNzU4ODgwNDUwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            alt="Batumi evening skyline"
-            className="w-full h-full object-cover opacity-25"
-          />
-          <div className="absolute inset-0 bg-stone-800/80"></div>
-        </div>
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-stone-800/95 to-emerald-900/90"></div>
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h2 className="text-xl font-bold text-white mb-4">

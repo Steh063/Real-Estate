@@ -4,7 +4,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "./components/ui/accordion";
+} from "./components/ui/accordion-simple";
 import { ImageWithFallback } from "./components/figma/ImageWithFallback";
 import {
   TrendingUp,

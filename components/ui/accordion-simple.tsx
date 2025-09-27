@@ -81,43 +81,39 @@ function AccordionTrigger({ children }: AccordionTriggerProps) {
   const isOpen = openItems.has(value);
 
   return (
-    <div style={{ display: 'flex' }}>
-      <button
-        onClick={() => toggleItem(value)}
-        data-state={isOpen ? "open" : "closed"}
-        style={{
-          display: 'flex',
-          flex: '1',
-          alignItems: 'flex-start',
-          justifyContent: 'space-between',
-          gap: '16px',
-          borderRadius: '6px',
-          paddingTop: '16px',
-          paddingBottom: '16px',
-          textAlign: 'left',
-          fontSize: '0.875rem',
-          fontWeight: '500',
-          transition: 'all 0.3s ease',
-          outline: 'none',
-          background: 'transparent',
-          border: 'none',
-          cursor: 'pointer'
-        }}
-      >
+    <button
+      onClick={() => toggleItem(value)}
+      data-state={isOpen ? "open" : "closed"}
+      style={{
+        display: 'flex',
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: '24px',
+        textAlign: 'left',
+        fontSize: '0.875rem',
+        fontWeight: '500',
+        transition: 'all 0.3s ease',
+        outline: 'none',
+        background: 'transparent',
+        border: 'none',
+        cursor: 'pointer'
+      }}
+    >
+      <div style={{ flex: '1', display: 'flex', alignItems: 'center', gap: '16px' }}>
         {children}
-        <ChevronDown 
-          size={16} 
-          style={{
-            color: '#6b7280',
-            pointerEvents: 'none',
-            flexShrink: '0',
-            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-            transition: 'transform 0.2s ease',
-            marginTop: '2px'
-          }} 
-        />
-      </button>
-    </div>
+      </div>
+      <ChevronDown 
+        size={16} 
+        style={{
+          color: '#6b7280',
+          pointerEvents: 'none',
+          flexShrink: '0',
+          transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+          transition: 'transform 0.2s ease'
+        }} 
+      />
+    </button>
   );
 }
 

@@ -45,6 +45,10 @@ body::after,
   }
   
   .responsive-padding {
-    padding: 40px 16px !important;
+    padding: 24px 16px !important;
+  }
+  
+  section {
+    padding: 24px 16px !important;
   }
 }

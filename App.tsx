@@ -157,7 +157,7 @@ export default function App() {
       {/* Hero Section */}
       <section style={{ 
         position: 'relative', 
-        padding: '60px 24px', 
+        padding: '40px 24px', 
         textAlign: 'center',
         background: 'linear-gradient(135deg, #ecfdf5 0%, #ffffff 100%)'
       }}>
@@ -186,7 +186,7 @@ export default function App() {
 
       {/* About Section */}
       <section style={{ 
-        padding: '60px 24px', 
+        padding: '40px 24px', 
         background: '#ffffff'
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -235,7 +235,7 @@ export default function App() {
 
       {/* Competencies Section */}
       <section style={{ 
-        padding: '60px 24px', 
+        padding: '40px 24px', 
         background: 'linear-gradient(135deg, #f9fafb, #f0fdfa)'
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -265,17 +265,37 @@ export default function App() {
                 borderRadius: '12px',
                 padding: '24px',
                 boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-                transition: 'all 0.3s ease'
+                transition: 'all 0.3s ease',
+                cursor: 'pointer'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
+                const icon = e.currentTarget.querySelector('.competency-icon');
+                if (icon) {
+                  icon.style.background = 'linear-gradient(135deg, #0d9488, #047857)';
+                  icon.style.transform = 'scale(1.05)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0px)';
+                e.currentTarget.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
+                const icon = e.currentTarget.querySelector('.competency-icon');
+                if (icon) {
+                  icon.style.background = 'linear-gradient(135deg, #14b8a6, #059669)';
+                  icon.style.transform = 'scale(1)';
+                }
               }}>
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '16px' }}>
-                  <div style={{ 
+                  <div className="competency-icon" style={{ 
                     width: '48px', 
                     height: '48px', 
                     background: 'linear-gradient(135deg, #14b8a6, #059669)',
                     borderRadius: '8px',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    transition: 'all 0.3s ease'
                   }}>
                     <competency.icon size={24} color="white" />
                   </div>
@@ -296,7 +316,7 @@ export default function App() {
 
       {/* Why Me Section */}
       <section style={{ 
-        padding: '60px 24px', 
+        padding: '40px 24px', 
         background: 'linear-gradient(135deg, #fafaf9, #f0fdfa)'
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -421,7 +441,7 @@ export default function App() {
 
       {/* Achievements Section */}
       <section style={{ 
-        padding: '60px 24px', 
+        padding: '40px 24px', 
         background: '#ffffff'
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -452,9 +472,28 @@ export default function App() {
                 borderRadius: '12px',
                 padding: '32px',
                 boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
-                transition: 'all 0.3s ease'
+                transition: 'all 0.3s ease',
+                cursor: 'pointer'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1)';
+                const icon = e.currentTarget.querySelector('.achievement-icon');
+                if (icon) {
+                  icon.style.background = 'linear-gradient(135deg, #047857, #0d9488)';
+                  icon.style.transform = 'scale(1.1)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0px)';
+                e.currentTarget.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.1)';
+                const icon = e.currentTarget.querySelector('.achievement-icon');
+                if (icon) {
+                  icon.style.background = 'linear-gradient(135deg, #10b981, #14b8a6)';
+                  icon.style.transform = 'scale(1)';
+                }
               }}>
-                <div style={{ 
+                <div className="achievement-icon" style={{ 
                   width: '64px', 
                   height: '64px', 
                   background: 'linear-gradient(135deg, #10b981, #14b8a6)',
@@ -462,7 +501,8 @@ export default function App() {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  margin: '0 auto 16px auto'
+                  margin: '0 auto 16px auto',
+                  transition: 'all 0.3s ease'
                 }}>
                   <achievement.icon size={32} color="white" />
                 </div>
@@ -490,7 +530,7 @@ export default function App() {
 
       {/* Roadmap Section */}
       <section style={{ 
-        padding: '60px 24px', 
+        padding: '40px 24px', 
         background: 'linear-gradient(135deg, #f0fdfa, #ecfdf5, #fafaf9)'
       }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
@@ -519,42 +559,33 @@ export default function App() {
                 }}>
                   <AccordionTrigger>
                     <div style={{ 
-                      display: 'flex', 
-                      alignItems: 'center', 
-                      gap: '16px', 
-                      textAlign: 'left',
-                      padding: '24px',
-                      width: '100%'
+                      width: '40px', 
+                      height: '40px', 
+                      background: 'linear-gradient(135deg, #14b8a6, #059669)',
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: 'white',
+                      fontWeight: '700'
                     }}>
-                      <div style={{ 
-                        width: '40px', 
-                        height: '40px', 
-                        background: 'linear-gradient(135deg, #14b8a6, #059669)',
-                        borderRadius: '50%',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        color: 'white',
-                        fontWeight: '700'
+                      {index + 1}
+                    </div>
+                    <div>
+                      <h3 style={{ 
+                        fontWeight: '600', 
+                        color: '#1f2937',
+                        margin: '0 0 4px 0'
                       }}>
-                        {index + 1}
-                      </div>
-                      <div>
-                        <h3 style={{ 
-                          fontWeight: '600', 
-                          color: '#1f2937',
-                          margin: '0 0 4px 0'
-                        }}>
-                          {step.title}
-                        </h3>
-                        <p style={{ 
-                          fontSize: '0.875rem', 
-                          color: '#6b7280', 
-                          margin: '0'
-                        }}>
-                          {step.description}
-                        </p>
-                      </div>
+                        {step.title}
+                      </h3>
+                      <p style={{ 
+                        fontSize: '0.875rem', 
+                        color: '#6b7280', 
+                        margin: '0'
+                      }}>
+                        {step.description}
+                      </p>
                     </div>
                   </AccordionTrigger>
                   <AccordionContent>
@@ -653,7 +684,7 @@ export default function App() {
 
       {/* Contact Section */}
       <section style={{ 
-        padding: '48px 24px', 
+        padding: '32px 24px', 
         background: 'linear-gradient(135deg, #1f2937, #065f46)',
         color: 'white'
       }}>
